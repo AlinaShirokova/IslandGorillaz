@@ -1,12 +1,13 @@
-package com.javarush.island.shirokova.entity.organisms;
+package com.javarush.island.shirokova.entity.creature.animal.carnivore;
 
+import com.javarush.island.shirokova.api.Carnivore;
 import com.javarush.island.shirokova.config.AnimalCharacteristics;
 
 /**
  * Represents a Wolf with defined characteristics.
  */
-public class Wolf extends Predator {
-    private final AnimalCharacteristics characteristics;
+public class Wolf extends Carnivore {
+    private AnimalCharacteristics characteristics;
 
     /**
      * Constructs a Wolf instance.
@@ -14,7 +15,7 @@ public class Wolf extends Predator {
      * @param characteristics the characteristics of the wolf
      */
     public Wolf(AnimalCharacteristics characteristics) {
-        this.characteristics = characteristics;
+        super(characteristics);
     }
 
     /**
@@ -30,6 +31,25 @@ public class Wolf extends Predator {
         } else {
             System.out.println("Wolf failed to eat " + prey + ".");
         }
+    }
+
+    @Override
+    public void reproduce() {
+    }
+
+    @Override
+    public int getX() {
+        return 0;
+    }
+
+    @Override
+    public int getY() {
+        return 0;
+    }
+
+    @Override
+    public void setLocation(int x, int y) {
+
     }
 
     // Further methods to utilize `characteristics` fields can be added

@@ -4,11 +4,12 @@ package com.javarush.island.shirokova.config;
  * Represents the characteristics of animals.
  */
 public class AnimalCharacteristics {
+    protected String name;
     private final double weight;
     private final int maxCountPerCell;
     private final int maxSpeed;
-    private final int foodRequirement;
-    private final double eatingProbability;
+    private final double foodRequirement;
+    private final double eatingProbability; //todo array?
 
     /**
      * Constructs an AnimalCharacteristics instance.
@@ -19,8 +20,9 @@ public class AnimalCharacteristics {
      * @param foodRequirement the amount of food the animal needs
      * @param eatingProbability the probability of eating when encountering food
      */
-    public AnimalCharacteristics(double weight, int maxCountPerCell, int maxSpeed,
-                                 int foodRequirement, double eatingProbability) {
+    public AnimalCharacteristics(String name, double weight, int maxCountPerCell, int maxSpeed,
+                                 double foodRequirement, double eatingProbability) {
+        this.name = name;
         this.weight = weight;
         this.maxCountPerCell = maxCountPerCell;
         this.maxSpeed = maxSpeed;
@@ -40,11 +42,15 @@ public class AnimalCharacteristics {
         return maxSpeed;
     }
 
-    public int getFoodRequirement() {
+    public double getFoodRequirement() {
         return foodRequirement;
     }
 
     public double getEatingProbability() {
         return eatingProbability;
+    }
+
+    public String getName() {
+        return name;
     }
 }
